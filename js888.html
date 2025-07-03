@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //帳密檢查
+        //內定帳號="admin"
+        //內定密碼="1234"
+
+        //帳號：正確 + 密碼：正確 => 顯示「帳密正確」
+        //帳號：正確 + 密碼：錯誤 => 顯示「密碼錯誤」
+        //帳號：錯誤 + 密碼：正確 => 顯示「帳號錯誤」
+        //帳號：錯誤 + 密碼：錯誤 => 顯示「帳密都錯」
+
+        var ID = "admin"
+        var PW = 1234
+
+        if (ID=="admin") {
+            if(PW==1234)
+            console.log("帳號正確");
+        }
+
+         if (blood == "A" || blood == "A") {
+            //若有下達轉換大小寫指令則 || 後面那串那不用寫了~
+            console.log("A型");
+        } else if (blood == "B" || blood == "b") {
+            console.log("B型");
+        } else if (blood == "O" || blood == "o") {
+            console.loge("O型");
+        } else if (blood == "AB" || blood == "ab" || blood == "Ab" || blood == "aB") {
+            console.log("AB型");
+        } else {
+            //以上血型都不是
+            console.log("血型不存在");
+        }
+
+    </script>
+</body>
+</html>

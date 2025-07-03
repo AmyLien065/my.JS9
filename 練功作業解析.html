@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //練功功課講解
+    //最大值
+    var n1 = 5;
+    var n2 = 8;
+    var max = n1;
+    if (n2 > max) {
+      max = n2;
+    }
+    console.log(`最大值為${n2}`)
+
+    //區間判斷-水費
+    //1-10 度 => 每度單價為  7.35元
+    //11-30度 => 每度單價為  9.45元
+    //31-50度 => 每度單價為 11.55元
+    //50以上  => 每度單價為 12.075元
+
+
+    var water = 8;
+    var price = 0;
+
+    if (water >= 1 && water <= 10) {
+      price = 7.35;
+    } else if (water >= 11 && water <= 30) {
+      price = 9.45;
+    } else if (water >= 31 && water <= 50) {
+      price = 11.55;
+    } else if (water > 50) {
+      price = 12.075;
+    } else {
+      console.log("度數有錯")
+    }
+    console.log(`用水度數為：${water}, 每度為：${price},實付水費為：${Math.round(water * price)}`);
+    //數學相關的指令在Math，四捨五入要用Math.round 無條件捨去floor 無條件進位ceil
+
+
+    //區間判斷-分數
+    // 請設計一個分數等級程式
+
+    // 80 - 100 => 甲
+    // 70 -   79 => 乙
+    // 60 -   69 => 丙
+    //  0  -   59 => 丁
+
+    // 測試情境：
+    // 分數：82 => 成績等級為甲等
+    //防呆要做在最前面
+
+    var intScore = 50;
+    var strLevel = "";
+
+    if (intScore < 0 || intScore > 100) {
+      console.log(`err!不是有效數值範圍`);
+    } else {
+      if (intScore >= 80 && intScore >= 100) {
+        strLevel = "甲";
+      } else if (intScore >= 70 && intScore >= 79) {
+        strLevel = "乙";
+      } else if (intScore >= 60 && intScore >= 69) {
+        strLevel = "丙";
+      } else {
+        strLevel = "丁";
+      }
+      console.log(`分數：${intScore} => 成績等級為${strLevel}等`)
+
+    }
+
+
+    //請設計一個票價費用試算程式：請輸入票價種類與張數，計算出票價的總計
+    var ticketType = 2;      //票的種類
+    var ticketPrice = 500;   //票的價格
+    var ticketName = "全票";  //票的名稱
+    var ticketNum = 2;       //票的張數
+    var errFlag = "N";       //存放是否錯誤（識別變數）
+
+    //檢查票價種類  正確/錯誤
+
+    switch (ticketType) {
+      default:
+        console.log("err!票種類別不存在")
+        errFlag = "Y"
+        break;
+      case 1: //全票
+        ticketPrice = 500;
+        ticketName = "全票";
+        break;
+      case 2: //優待票
+        ticketPrice = 500 * 0.8;
+        ticketName = "優待票";
+        break;
+      case 3: //敬老票
+        ticketPrice = 500 * 0.8 * 0.7;
+        ticketName = "敬老票";
+        break;
+    }
+    if(errFlag == "N") {
+      console.log(`${ticketName}${ticketNum}張，票價為：${ticketNum * ticketPrice}`);
+    }
+  
+
+  </script>
+
+
+</body>
+
+</html>
