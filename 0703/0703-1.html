@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1-10的合計
+        /*
+        累計 => s=s+i
+        s=0
+        i=1 => s=s+i => s=0+1=1
+        i=2 => s=s+2 => s=1+2=3
+        i=3 => s=s+3 => s=3+3=6
+        i=4 => s=s+6 => s=6+4=10
+        ...
+        */
+        var s = 0;
+        for (var i = 1; i <= 10; i + 1) {
+            s = s + 1;
+        }
+        document.write("1+2+3+...+10=" + s);
+
+        //請統計1-100之間的奇數和
+        //愛咪版本 錯在：應該拿i值去除！
+        // document.write("<hr>請統計1-100之間的奇數和<br>");
+        // var n = 0;
+        // for (var i = 1; i <= 100; i + 1) {
+        //     if (n % 2 == 1) ;
+        // }
+        // document.write(n)
+        // document.write("<hr>");
+
+
+        //因前面S變數已宣告過，若要再次使用需將S變數歸零（再宣告一次var s = 0）
+        // 但是其實宣告新變數更快
+
+        //寫法1
+        var s1 = 0;
+
+        for (var i = 1; i <= 100; i + 1) {
+            if (i % 2 == 1); {
+                s1 = s1 + i;
+            }   
+        }
+        document.write(`1-100的奇數和=${s1}<br>`);
+
+        //寫法2 => 等差為2
+        s1=0;
+        for (var i = 1 ; i <= 100; i + 2) {
+            s1 = s1 +i;
+        }
+         document.write(`1-100的奇數和=${s1}<br>`);
+
+        //請統計100-1之間的偶數和(用遞減方式呈現)
+        document.write("<hr>請統計100-1之間的偶數和<br>");
+
+
+        //請統計1-100之間的3的倍數同時也是5的倍數的和與列出數字 （邏輯運算子&& 或 巢狀）
+
+
+
+    </script>
+
+</body>
+
+</html>
