@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>猜數字</h2>
+    <p id = "result"></p>
+
+
+    <script>
+        //取得亂數值
+        let rd = Math.floor(Math.random() * 100) + 1
+        let min = 1;
+        let max = 100;
+        let count = 0;  // 存放使用者嘗試次數
+        let strMsg = "";  //用來存放每次執行後的訊息
+
+
+        while (1) {
+            count++;
+            let KeyNum = prompt(`請輸入任意數字:${min}-${max}`);
+
+            if (KeyNum == null) {
+                alert(`您取消了遊戲`);
+                break;
+            }
+
+            if (KeyNum.trim() == "") {
+                alert(`非數字，請重新輸入`);
+                continue;
+            }
+            KeyNum = parseInt(KeyNum);
+
+            if (isNaN(KeyNum)) {
+                alert(`非數字，請重新輸入！`);
+                continue;
+            }
+
+            if (KeyNum <= 0 || KeyNum > 100) {
+                alert(`超出有效範圍，請猜1-100`);
+                continue;
+            }
+
+            if (KeyNum === rd) {
+                alert(`第${count}次嘗試，Bingo！恭喜答對！`);
+                break;
+            }
+
+            if (KeyNum > rd) {
+                max = KeyNum;
+                alert(`第${count}次嘗試，太大了，提示：「${min}-${max}」`);
+                strMsg = strMsg + `第${count}次嘗試，太大了，提示：「${min}-${max}」`;
+            } else if (KeyNum < rd) {
+                min = KeyNum;
+                alert(`第${count}次嘗試，太小了，提示：「${min}-${max}」`);
+                strMsg = strMsg + `第${count}次嘗試，太小了，提示：「${min}-${max}」`;
+            }
+
+            // let result = document.getElementById(`result`);
+            // result.innerHTML = strMsg;
+            // 上面兩串合併成下面這句
+            document.getElementById(`result`).innerHTML = strMsg;
+
+        }
+
+
+
+    </script>
+
+
+</body>
+
+</html>

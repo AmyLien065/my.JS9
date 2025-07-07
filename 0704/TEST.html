@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 請輸入成績N次, 直到輸入-1時結束
+並統計出如下
+及格人數
+不及格人數
+全班總分
+全班平均
+測試資料如下:
+90
+10
+-2 => err！不是有效範圍0-100，請重新輸入！
+30
+100
+a => err！非數字，請重新輸入！
+66
+-1 => 結束
+-->
+
+    <h1>成績輸入</h1>
+    <p>請輸入成績N次, 直到輸入-1時結束</p>
+    <p>並統計出如下</p>
+    <p>
+    <ul>
+        <li>及格人數</li>
+        <li>不及格人數</li>
+        <li>全班總分</li>
+        <li>全班平均</li>
+    </ul>
+    </p>
+    <p id="result">結果</p>
+
+
+    <script>
+
+        //法1
+        var ppl = 0;
+        var total = 0;
+        var ave = 0;
+
+        while (1) {
+            var score = prompt("請輸入分數");
+            if (score == -1) {
+                alert("結束");
+                break;
+            } else if (score == "") {
+                alert("不可空白，請重新輸入");
+            } else if (score <= -2 || score >= 101) {
+                alert("err！不是有效範圍0-100，請重新輸入！");
+                continue;
+            }
+        }
+
+        //法2
+        do {
+            var score = prompt("請輸入分數");
+            if (score == -1) {
+                alert("結束");
+                break; {
+             else if (score <= -2 || score >= 101) {
+                        alert("err！不是有效範圍0-100，請重新輸入！");
+                        continue;
+                    } else if (isNaN(Number(score))) {
+                        alert("err！非數字，請重新輸入！");
+                        continue;
+                    }
+                }
+            }
+        }
+
+        while (1);
+
+    </script>
+
+</body>
+
+</html>
