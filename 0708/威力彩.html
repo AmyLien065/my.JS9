@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>財富自由</h2>
+    <h2>威力彩開獎時間</h2>
+    <script>
+        //威力彩
+        //第一區1-49號，隨機6碼，第二區 (特別號)1-49號，隨機1碼，不可與第一區重複
+        let arrW1 = [];
+        for (i = 1; i <= 49; i++) {
+            arrW1.push(i);
+        }
+        console.log(arrW1);
+
+        let arrW2 = [];
+
+        while (arrW2.length < 6) {
+            let n = Math.floor(Math.random() * 49) + 1;
+            if (arrW2.includes(n)) {
+            } else {
+                arrW2.push(n);
+            }
+        }
+        console.log(arrW2);
+        console.log(arrW2.sort((a, b) => a - b));
+
+        
+
+        document.write(`${arrW2.sort((a, b) => a - b)},${arrW3}`);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>找出陣列中的奇數值</h2>
+    <script>
+        let arr1 = [1, 6, 7, 100, 234];
+
+        // for迴圈 我的寫法
+        for (let i = 0; i < arr1.length; i++) {
+            if (arr1[i] % 2 == 1) {
+                console.log(arr1[i]);
+            }
+        }
+
+        //老師
+        let arr2 = [];
+        for (let i = 0; i < arr1.length; i++) {
+            if (arr1[i] % 2 == 1) {
+                arr2.push(arr1[i]);
+            }
+        }
+        console.log(arr2);
+
+        // map 我的錯誤版
+        // let arr2 = arr1.map((n) => {
+        //     return n % 2 == 1
+        // });
+        // console.log(arr1);
+
+        // 老師:此題目不適合使用map! 所以不選此方法 =>會顯示true/false
+        // let arr = arr1.map((n) => {
+        //     if (n % 2 != 0) {
+        //     return turue}
+        // })
+        // console.log(arr);
+
+        //filter（只留下符合條件的元素）
+        console.log(arr1);
+        let arr3 = arr1.filter((n) => {
+            if (n % 2 !== 0) {
+                return true;  //奇數要保留
+            }
+        })
+        console.log(arr3);
+
+        // 再更簡化版本
+        let arr4 = arr1.filter((n) => {
+            return n % 2 !== 0;  //奇數要保留
+        })
+        console.log(arr4);
+
+        // 再簡化
+        // 還沒寫完 晚點補上
+    
+        let arr5 = arr1.filter((n) => n %2 =
+          return   
+        })
+
+
+    </script>
+</body>
+
+</html>

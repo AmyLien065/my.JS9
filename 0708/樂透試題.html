@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //皆需要未排序/遞增排序/產生的號碼要放在陣列之中，才能檢查是否重複
+        //大樂透
+        //第一區1-38號，隨機6碼，第二區1-8號，隨機1碼，可與第一區重複
+        let arrB1 = [];
+        for (i = 1; i <= 38; i++) {
+            arrB1.push(i);
+        }
+        console.log(arrB1);
+
+        let arrB2 = [];
+        while (arrB2.length < 6) {
+            let n = Math.floor(Math.random() * 38) + 1;
+            if (arrB2.includes(n)) {
+            } else {
+                arrB2.push(n);
+            }
+        }
+        console.log(arrB2);
+        console.log(arrB2.sort((a, b) => a - b));
+
+        let arrB3 = Math.floor(Math.random() * 38) + 1;
+        console.log(arrB3);
+        
+        //威力彩
+        //第一區1-49號，隨機6碼，第二區 (特別號)1-49號，隨機1碼，不可與第一區重複
+        let arrW1 = [];
+        for (i = 1; i <= 49; i++) {
+            arrW1.push(i);
+        }
+        console.log(arrW1);
+
+        let arrW2 = [];
+
+        while (arrW2.length < 6) {
+            let n = Math.floor(Math.random() * 49) + 1;
+            if (arrW2.includes(n)) {
+            } else {
+                arrW2.push(n);
+            }
+        }
+        console.log(arrW2);
+        console.log(arrW2.sort((a, b) => a - b));
+
+
+
+        //今彩539
+        //1-39隨機5碼
+
+        let arr1 = [];
+        for (i = 1; i <= 39; i++) {
+            arr1.push(i);
+        }
+        console.log(arr1);
+
+        //let n = Math.floor(Math.random() * 39) + 1;
+        //console.log(rd); //這樣只會產生一個隨機數字，怎麼辦
+        //arr2.includes(n) 檢查是否已存在，已存在就排除
+
+        let arr2 = [];
+
+
+        while (arr2.length < 5) {
+            let n = Math.floor(Math.random() * 39) + 1;
+            if (arr2.includes(n)) {
+            } else {
+                arr2.push(n);
+            }
+        }
+        console.log(arr2);
+        console.log(arr2.sort((a, b) => a - b));
+
+        //arr2[n] = arr2.push(n2)
+
+
+    </script>
+
+
+</body>
+
+</html>
