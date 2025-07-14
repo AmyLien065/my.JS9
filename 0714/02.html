@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <lebel for="name">請輸入姓名</lebel>
+    <input type="text" id="name">
+    <button onclick="sayHi3(getName())">確定</button>
+    <p id="showData"></p>
+
+    <script>
+        //寫法1：無參數，無傳回值
+        function sayHi1() {
+            //取得文字方潰內容
+            let name1 = document.getElementById("name".value);
+
+            //取得顯示段落
+            let showData = document.getElementById("showData");
+
+            //顯示結果
+            showData.textContent = `Hi, ${name1}`;
+        }
+
+
+        // 寫法2：無參數，有回傳值(此範例不適合使用此方法)
+        function sayHi2() {
+            //取得文字方潰內容
+            let name1 = document.getElementById("name".value);
+
+            //取得顯示段落
+            let showData = document.getElementById("showData");
+
+            //顯示結果
+            showData.textContent = `Hi, ${name1}`;
+
+            return name1;
+
+        }
+
+
+        // 寫法3：有參數，無傳回值
+        function sayHi3(userName) {
+            let showData = document.getElementById("showData");
+
+            //顯示結果
+            showData.textContent = `Hi, ${UserName}`;
+
+        }
+
+        // 取得姓名(無參數，有傳回值)
+        function getName() {
+            //取得文字方塊內容
+            let name1 = document.getElementById("name").value;
+            return name1;
+        }
+
+        // 寫法4：有參數，有傳回值(此範例不適合此做法)
+        function sayHi4(userName) {
+            return userName;
+        }
+
+        if (!sayHi4){
+
+
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

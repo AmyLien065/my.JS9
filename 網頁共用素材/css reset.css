@@ -58,12 +58,3 @@ a {
     color: ColorValues;
     text-decoration: none;
 }
-
-/* 首頁區 */
-#topbar{
-    padding: 30px;
-}
-
-.logo{
-    width: 55px;
-}
