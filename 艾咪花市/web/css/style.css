@@ -1,27 +1,117 @@
 @charset "UTF-8";
 /* 編碼一定要放第一行 */
 
+/* CSS變數 */
+:root{
+    /* 灰階 */
+    --deep:#444;
+    --dark:#666;
+    --grey:#999;
+    --light:#f1f1f1;
+    /* 背景 */
+    --bg-1:#F2EDD0;
+    --bg-2:#E6ECE5;
+    --bg-3:ECF0F4;
+    /* 輔助 */
+    --lesser-1:#f3e4e4;
+    --lesser-2:#efdbdb;
+    --lesser-3:#cdaaab;
+    --lesser-4:#8f6b6d;
+    /* 透明 */
+    --alpha-w-20:rgba(255, 255, 255, 0.2);
+    /* 尺寸 */
+    --ex:99999px;
+}
+
 /* CSS reset */
 * {
     box-sizing: border-box;
     /* 不累加內距與邊框 */
 }
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
 }
 
 /* 重置字體 */
@@ -55,15 +145,88 @@ img {
 
 /* 重置連接 */
 a {
-    color: ColorValues;
+    display: block;
+    /*inline不支援尺寸設定但a常用來設定尺寸，所以直接把inline修改為block，在設計上較為方便 */
+    color: #666;
     text-decoration: none;
 }
 
 /* 首頁區 */
-#topbar{
+#topbar {
+    position: fixed; /* position權重大於display */
+    justify-content: space-between;
+    top: 0; 
+    left: 0;
+    z-index: ;
+    width: 100%; /* position預設寬高為hug，所以需要手動寫w */
+    display: flex; 
     padding: 30px;
 }
 
-.logo{
+div.logo {
     width: 55px;
+}
+
+#topbar ul {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* icon選單 */
+.icon a {
+    width: 35px;
+    height: 35px;
+    margin: 5px;
+}
+
+/* svg檔案會自動 w:fill/h:auto  若不是svg檔，不會自動fill，則需多寫一行background-size:100% 去resize*/
+.icon-fb {
+    background-image: url(../images/icon-fb.svg);
+}
+
+.icon-ig {
+    background-image: url(../images/icon-ig.svg);
+}
+
+.icon-line {
+    background-image: url(../images/icon-line.svg);
+}
+
+.icon-fb:hover {
+    background-image: url(../images/icon-fb-hover.svg);
+}
+
+.icon-ig:hover {
+    background-image: url(../images/icon-ig-hover.svg);
+}
+
+.icon-line:hover {
+    background-image: url(../images/icon-line-hover.svg);
+}
+
+/* 主選單 */
+#topbar .menu {
+    padding: 0 10px;
+    border: 2px solid;
+    border-radius: 999px;
+    /* 玻璃擬態 */
+    background-color: var(--alpha-w-20);
+    border: 2px solid var(--alpha-w-20);
+}
+
+#topbar .menu a {
+    /* margin: 10px; */
+    border-bottom: 2px solid transparent;
+    /* 保留hover空間，以防尺寸變動*/
+}
+
+#topbar .menu a:hover {
+    color: #222;
+    border-bottom: 2px solid #222;
+    /* 邊框-下 */
+}
+/* 聯絡我們 */
+#contact{
+    height: 100vh;
+    background-color: var(--bg-1);
 }
