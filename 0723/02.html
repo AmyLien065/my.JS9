@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 將函式當作其他函式的傳回值 => 就是指傳回值的內容是一個函式
+
+        let sayHi = (name) => {
+            return function () {
+                console.log(name);
+            }
+        }
+
+        // sayHi("JavaScript")();
+
+        let sayHi2 = (name) => {
+            return console.log(name);
+        }
+        // sayHi2("JavaScript2");
+
+        let sayHi3 = (name) => {
+            // 傳回值帶有參數
+            return function (str1) {
+                console.log("Hi, " + name + "," + str1);
+            }
+        }
+        // 函式名稱（函式名稱的參數）（傳回值中函式的參數）
+        sayHi3("JavaScript3")("安妞");
+    </script>
+</body>
+
+</html>

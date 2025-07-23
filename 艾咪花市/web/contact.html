@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>愛咪花市</title>
+    <title>愛咪花室</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
     <!-- 首頁區 -->
-     <!-- id & class 的名稱，都是自己命名的 -->
+    <!-- id & class 的名稱，都是自己命名的 -->
     <header id="topbar">
         <!-- logo區 -->
         <div class="logo">
@@ -16,7 +18,7 @@
         </div>
         <!-- 導覽列 -->
         <nav class="navigation">
-            <!-- icon選單 -->
+            <!-- icon選單 咒語：ul>li*3>a -->
             <ul class="icon">
                 <li><a class="icon-fb" href="#"></a></li>
                 <li><a class="icon-ig" href="#"></a></li>
@@ -25,7 +27,7 @@
 
 
 
-            <!-- 主選單 -->
+            <!-- 主選單 咒語：ul>li*6>a -->
             <ul class="menu"> <!-- shift+option+a 只註解後面：） ul>li*6>a 指令就會自己輸入6次，相當方便省時 -->
                 <li><a href="./index.html">HOME</a></li>
                 <li><a href="#">NEWS</a></li> <!-- 若超連結暫時不確定導去哪，則先輸入#以免忘記 -->
@@ -34,21 +36,51 @@
                 <li><a href="#">VIDEO</a></li>
                 <li><a href="./contact.html">CONTACT</a></li>
             </ul>
-
         </nav>
-    </header>    
-        <!-- 主要內容區 -->
-        <main>
-            <section id="contact">
-
-            </section>
-
-        </main>
-        <!-- 頁尾區 -->
-         <footer>
-
-         </footer>
+    </header>
+    <!-- 主要內容區 -->
+    <main>
+        <section id="contact">
+            <!-- 區塊標題 -->
+            <header class="title"></header>
+                <h2>CONTACT</h2>
+                <h3>聯絡我們</h3>
+        </section>
+    </main>
+    <!-- 頁尾區 -->
+    <footer>
+        <h2>愛咪花室 <span>Amy Flower</span></h2>
+        <nav>
+            <ul class="sitemap">
+                <li><a href="./index.html">HOME</a></li>
+                <li>   
+                    <a href="#">NEWS</a>
+                    <!-- 子選單 -->
+                    <ul>
+                        <li><a href="#">優惠活動</a></li>
+                        <li><a href="#">媒體報導</a></li>
+                        <li><a href="#">商店公告</a></li>
+                    </ul>
+                </li> 
+                <li>
+                    <a href="#">SERVICE</a>
+                    <!-- 子選單 -->
+                     <ul>
+                        <li><a href="#">服務項目1</a></li>
+                        <li><a href="#">服務項目2</a></li>
+                        <li><a href="#">服務項目3</a></li>
+                        <li><a href="#">服務項目4</a></li>
+                     </ul>
+                </li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">VIDEO</a></li>
+                <li><a href="./contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        <small>Copyright &copy; 愛咪花室 Amy Flower.</small>
+    </footer>
 
 
 </body>
+
 </html>

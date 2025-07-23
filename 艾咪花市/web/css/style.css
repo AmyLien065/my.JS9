@@ -2,25 +2,27 @@
 /* 編碼一定要放第一行 */
 
 /* CSS變數 */
-:root{
+:root {
     /* 灰階 */
-    --deep:#444;
-    --dark:#666;
-    --grey:#999;
-    --light:#f1f1f1;
+    --deep: #444;
+    --dark: #666;
+    --grey: #999;
+    --light: #f1f1f1;
     /* 背景 */
-    --bg-1:#F2EDD0;
-    --bg-2:#E6ECE5;
-    --bg-3:ECF0F4;
+    --bg-1: #F2EDD0;
+    --bg-2: #E6ECE5;
+    --bg-3: ECF0F4;
     /* 輔助 */
-    --lesser-1:#f3e4e4;
-    --lesser-2:#efdbdb;
-    --lesser-3:#cdaaab;
-    --lesser-4:#8f6b6d;
+    --lesser-1: #f3e4e4;
+    --lesser-2: #efdbdb;
+    --lesser-3: #cdaaab;
+    --lesser-4: #8f6b6d;
     /* 透明 */
-    --alpha-w-20:rgba(255, 255, 255, 0.2);
+    --alpha-w-20: rgba(255, 255, 255, 0.2);
+    --alpha-w-40: rgba(255, 255, 255, 0.4);
+
     /* 尺寸 */
-    --ex:99999px;
+    --ex: 99999px;
 }
 
 /* CSS reset */
@@ -112,12 +114,15 @@ audio,
 video {
     margin: 0;
     padding: 0;
+    font-size: 100%;
 }
 
 /* 重置字體 */
 body {
+    /* 需要“”的字體名稱有：兩個英文單字含空格、中文字體名稱 */
+    /* 不需要“”的字體名稱有：只有一個單字、有「-」隔開 */
+    /* 懶得記就全部都加上“”，有加“”不會錯，但若該加的沒加一定會出錯 */
     font-family: sans-serif;
-    font-size: 100%;
     line-height: 1.5;
 }
 
@@ -149,18 +154,30 @@ a {
     /*inline不支援尺寸設定但a常用來設定尺寸，所以直接把inline修改為block，在設計上較為方便 */
     color: #666;
     text-decoration: none;
+    /* 取消預設底線 */
+
+    /* 設定在元素本身，不要設定在hover上，若設定在hover上＋滑鼠未滿動畫時間就移開，滑鼠移開不會有動畫 */
+    transition: .4s .01s;
+    /* 第一個數字是動畫時間 第二個數字是delay時間 */
 }
+/* 共用區 */
+
+/* 區塊標題 */
+
 
 /* 首頁區 */
 #topbar {
-    position: fixed; /* position權重大於display */
-    justify-content: space-between;
-    top: 0; 
+    position: fixed;
+    /* position權重大於display */
+    
+    top: 0;
     left: 0;
-    z-index: ;
-    width: 100%; /* position預設寬高為hug，所以需要手動寫w */
-    display: flex; 
-    padding: 30px;
+    width: 100%;
+    z-index: var(--ex);
+    /* position預設寬高為hug，所以需要手動寫w */
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
 }
 
 div.logo {
@@ -182,6 +199,7 @@ div.logo {
 /* svg檔案會自動 w:fill/h:auto  若不是svg檔，不會自動fill，則需多寫一行background-size:100% 去resize*/
 .icon-fb {
     background-image: url(../images/icon-fb.svg);
+    /* background-size: 100%; */
 }
 
 .icon-ig {
@@ -207,15 +225,25 @@ div.logo {
 /* 主選單 */
 #topbar .menu {
     padding: 0 10px;
-    border: 2px solid;
     border-radius: 999px;
     /* 玻璃擬態 */
     background-color: var(--alpha-w-20);
-    border: 2px solid var(--alpha-w-20);
+    border: 2px solid var(--alpha-w-40);
+    backdrop-filter: blur(30px);
+
+    /* 容器陰影:只針對元素本身，子元素不會套用 */
+    box-shadow: 2px 2px 5px var(--alpha-w-20),
+        inset -1px -1px 1px var(--alpha-w-40);
+
+    /* 濾鏡的陰影是包含子元素都套用（所有孩子都會套用變成有陰影） */
+    /* filter: drop-shadow(2px 4px 10px rgba(0,0,0,0.2)); */
+
+    /* 文字陰影:只針對元素本身，子元素不會套用 */
+    /* text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); */
 }
 
 #topbar .menu a {
-    /* margin: 10px; */
+    margin: 10px;
     border-bottom: 2px solid transparent;
     /* 保留hover空間，以防尺寸變動*/
 }
@@ -225,8 +253,44 @@ div.logo {
     border-bottom: 2px solid #222;
     /* 邊框-下 */
 }
+
 /* 聯絡我們 */
-#contact{
+#contact {
     height: 100vh;
+    /* 背景影像預設排序高於背景顏色，會蓋過背景顏色ㄛ */
+    /* background-image: url(../images/banner_1.jpg); */
     background-color: var(--bg-1);
+}
+
+/* 頁尾區 */
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+    background-color: var(--lesser-4);
+    color: var(--light);
+}
+
+footer h2{
+    font-size: 1.5rem;
+}
+footer h2 span {
+    font-size: 1rem;
+}
+
+footer a {
+    color: var(--light);
+}
+
+footer .sitemap {
+    display: flex;
+}
+
+/* 符號[>]為指定第一層，只會套用在第一層 */
+footer .sitemap>li {
+    margin: 0 10px;
+}
+
+footer small {
+    align-self: flex-end;
 }
