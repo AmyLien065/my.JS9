@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 建立一個add()函式，計算所有參數的總和
+        // let add = (n1, n2, n3 = 0, n4 = 0) => {
+        //     let tot = n1 + n2 + n3;
+        //     return tot;
+        // }
+        // console.log(add(5, 3));
+
+        // 其餘函式的寫法，來接收不同參數值的個數使用
+        // let add = (...number) => {
+        //     let tot = 0;
+
+        //     // for of迴圈寫法：不需在意迴圈何時結束
+        //     for (let n of number) {
+        //         tot += n;
+        //     }
+
+        //     // for 迴圈寫法：需注意是陣列
+        //     // for (let i = 0; i < number.length; i++) {
+        //     //     tot += number[i];
+        //     // }
+        //     return tot;
+        // }
+
+        // 其餘陣列參數
+        let add = (...[x, y, z]) => {
+            let tot = 0;
+            console.log(x);
+            console.log(y);
+            console.log(z);
+
+            return x + y + z;
+        }
+        // console.log(add(5, 3));                         //[5,3]
+        // console.log(add(5, 3, 8));                   //[5,3,8]
+        console.log(add(5, 3, 8, 10));               //[5,3,8,10]
+        // console.log(add(5, 3, 8, 10, 100));          //[5,3,8,10,100]
+    </script>
+</body>
+
+</html>

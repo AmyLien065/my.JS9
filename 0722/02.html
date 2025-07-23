@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 計算梯形面積（上底＋下底）*高 /2
+
+        // 傳統函式
+        function getArea(top, bottom, height) {
+            let area = (top + bottom) * height / 2;
+            return `梯形面積1＝${area}`;
+        }
+        console.log(getArea(10, 20, 10));
+
+        // 匿名函式 (和傳統函式差別在這邊要設定變數)
+        let getArea2 = function (top, bottom, height) {
+            let area = (top + bottom) * height / 2;
+            return `梯形面積2＝${area}`;
+        }
+        console.log(getArea2(10, 20, 10));
+
+        // 箭頭函式 (和匿名函式差別在「function」變成「=>」)
+        let getArea3 = (top, bottom, height) => {
+            let area = (top + bottom) * height / 2;
+            return `梯形面積3＝${area}`;
+        }
+        console.log(getArea3(10, 20, 10));
+
+        // 預設參數 (此題高即為預設參數，後續可以被覆蓋)
+        let getArea4 = (top, bottom, height = 10) => {
+            let area = (top + bottom) * height / 2;
+            return `梯形面積4＝${area}`;
+        }
+        // 高度沒有給值，則使用預設參數值
+        console.log(getArea4(10, 20));
+        //  高度有給值，則不使用預設參數值
+        console.log(getArea4(10, 20, 5));
+
+        // 具名參數 (可以不按照參數的順序給值，必須使用物件型別{}大括號「傳送」與「接收」指定參數)
+        let getArea5 = ({ top, bottom, height = 10 }) => {
+            let area = (top + bottom) * height / 2;
+            return `梯形面積5＝${area}`;
+        }
+        console.log(getArea5({ bottom: 10, top: 20, height: 5 }));
+        console.log(getArea5({ bottom: 10, top: 20 }));
+
+    </script>
+</body>
+
+</html>

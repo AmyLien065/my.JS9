@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 傳回值超過二個以上，使用陣列或物件
+        // 練習：建立一個addsub()函式，計算和與差，並且傳回和與差二個值
+        let addsub = (n1, n2) => {
+            let add = n1 + n2;
+            let sub = n1 - n2;
+            return [add, sub];
+        }
+        let result = addsub(5, 3);
+        console.log(result);
+        console.log(`兩數相加為${result[0]}`);
+        console.log(`兩數相減為${result[1]}`);
+
+    </script>
+</body>
+
+</html>

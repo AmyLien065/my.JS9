@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 兩數相加
+        function add(n1, n2) {
+            return n1 + n2;
+        }
+        console.log(add(5, 3));
+
+        // 匿名函式
+        let add2 = function (n1, n2) {
+            return n1 + n2;
+        }
+        console.log(add2(10, 8));
+
+        // 請傳送半徑，算出圓面積(pi*r*r) pi=3.14
+        // let getArea = function (r) {
+        //     // 建立一個常數變數（執行中不可被改變，一旦變更就會出錯）
+        //     const pi = 3.14;
+        //     return pi * r * r;
+        // }
+        // console.log(getArea(10));
+
+        // 箭頭函式(arrow function)
+        // 將「function」刪掉改符號「=>」放在小括號和大括號之間，意思是一樣的
+        let getArea = (r) => {
+            // 建立一個常數變數（執行中不可被改變，一旦變更就會出錯）
+            const pi = 3.14;
+            return pi * r * r;
+        }
+        console.log(getArea(10));
+
+    </script>
+</body>
+
+</html>
