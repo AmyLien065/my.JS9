@@ -11,23 +11,23 @@
     <script>
         // 1
         // 寫一個函式 printMany ，輸出1, 2, 3, ..., 100
-        // function printMany() {
-        //     for (let i = 1; i < 101; i++) {
-        //         console.log(i);
-        //     }
-        // }
-        // printMany();
+        function printMany() {
+            for (let i = 1; i < 101; i++) {
+                console.log(i);
+            }
+        }
+        printMany();
 
         // 2
         // 題目：寫一個函式 printEvery3 ，輸出1, 4, 7, ..., 88
         // 結果：
         // printEvery3();
-        // function printEvery3() {
-        //     for (let a = 1; a < 89; a = a + 3) {
-        //         console.log(a);
-        //     }
-        // }
-        // printEvery3();
+        function printEvery3() {
+            for (let a = 1; a < 89; a = a + 3) {
+                console.log(a);
+            }
+        }
+        printEvery3();
 
         // 3 
         // 題目：寫一個函式stars ，輸出連續N個*
@@ -35,16 +35,16 @@
         // stars(3);	 // ***
         // stars(10);	 // **********
 
-        // function stars(n1) {
-        //     let a = "";
-        //     for (let s = 1; s <= n1; s++) {
-        //         a = a + "*";
-        //     } 
-        //     console.log(a);
-        // }
+        function stars(n1) {
+            let a = "";
+            for (let s = 1; s <= n1; s++) {
+                a = a + "*";
+            } 
+            console.log(a);
+        }
 
-        // stars(3);
-        // stars(10);
+        stars(3);
+        stars(10);
 
 
         // 題目4：寫一個函式 isUpperCase ，檢查第一個字母是否為大寫
@@ -54,16 +54,16 @@
         // console.log(isUpperCase("")); 			// returns false
         // console.log(isUpperCase("aBCD"));		// returns false
 
-        // function isUpperCase(str) {
-        //     if (!str) {
-        //         return false;
-        //     }
-        //     let word = str[0];
-        //     return word === word.toUpperCase();
-        // }
-        // console.log(isUpperCase("ABCD"));
-        // console.log(isUpperCase(""));
-        // console.log(isUpperCase("aBCD"));
+        function isUpperCase(str) {
+            if (!str) {
+                return false;
+            }
+            let word = str[0];
+            return word === word.toUpperCase();
+        }
+        console.log(isUpperCase("ABCD"));
+        console.log(isUpperCase(""));
+        console.log(isUpperCase("aBCD"));
 
 
         // 題目5：寫一個函式 isAllUpperCase，檢查所有字母是否為大寫
@@ -73,15 +73,15 @@
         // console.log(isAllUpperCase("")); 				// returns false
         // console.log(isAllUpperCase("ABCDEFGHIJKLm")); 	// returns false
 
-        //  function isAllUpperCase(str) {
-        //     if (!str) {
-        //         return false;
-        //     }
-        //     return str === str.toUpperCase();
-        // }
-        // console.log(isAllUpperCase("ABCD"));
-        // console.log(isAllUpperCase(""));
-        // console.log(isAllUpperCase("ABCDEFGHIJKLm"));
+         function isAllUpperCase(str) {
+            if (!str) {
+                return false;
+            }
+            return str === str.toUpperCase();
+        }
+        console.log(isAllUpperCase("ABCD"));
+        console.log(isAllUpperCase(""));
+        console.log(isAllUpperCase("ABCDEFGHIJKLm"));
 
         // 題目6：寫一個函式 position，檢查第一個字母大寫的內容與位置，找不到為 - 1
         // 結果：
@@ -93,7 +93,7 @@
         let str = [];
         function position() {
 
-            for (let s = 1; s <= str.length; s++) {
+            for (let n = 1; n <= str.length; n++) {
                 if (s <= str.length) {
                     return "-1";
                 }
