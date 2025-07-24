@@ -26,11 +26,31 @@
         };
 
         // 取得物件屬性 => 物件名稱.屬性名稱 （.的意思可以理解成「的」）
+        // 使用成員運算子（.）
         console.log(`使用者姓名：${user.name}`);
         console.log(`使用者年齡：${user.age}歲`);
 
+        // 使用中括號表示法取得物件屬性
+        // 物件名稱["屬性名稱"];
+        // 物件名稱[’屬性名稱‘];
+        console.log(`使用者姓名2：${user['name']}`);
+        console.log(`使用者年齡2：${user['age']}歲`);
+
+
         // 取得物件方法 => 物件名稱.屬性名稱() 
         user.showMsg();
+
+        // 變更物件的屬性
+        // 物件名稱.屬性名稱=屬性值
+        user.age = 29;
+        console.log(user.age);
+        console.log(user["age"]);
+
+        // delete 物件名稱.屬性名稱;
+        delete user.age;
+
+        // 刪除物件的屬性：刪除後再取得此屬性，傳回undefined
+        console.log(user.age); //undefined
 
     </script>
 </body>
