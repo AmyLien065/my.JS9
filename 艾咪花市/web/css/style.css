@@ -1,5 +1,10 @@
-@charset "UTF-8";
-/* 編碼一定要放第一行 */
+@charset "UTF-8"; /* 編碼一定要放第一行 */
+@import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&family=Special+Gothic+Expanded+One&display=swap');
+/* google font一定要放第二行 */
+@font-face {
+    font-family: "atwriter";
+    src: url(../webfonts/atwriter.ttf);
+}
 
 /* CSS變數 */
 :root {
@@ -31,59 +36,10 @@
     /* 不累加內距與邊框 */
 }
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,
+pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,
+ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,
+center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,
 table,
 caption,
 tbody,
@@ -161,8 +117,25 @@ a {
     /* 第一個數字是動畫時間 第二個數字是delay時間 */
 }
 /* 共用區 */
-
 /* 區塊標題 */
+.title{
+    margin-bottom: 30px;
+}
+.title * { /* .title區中的所有子孫 */
+    text-align: center;
+}
+
+.title h2{
+    font-family: "atwriter";
+    font-size: 2rem;
+    border-bottom: solid 2px var(--deep);
+}
+
+.title h3{
+    font-family: "LXGW WenKai TC", cursive;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
 
 
 /* 首頁區 */
@@ -243,6 +216,7 @@ div.logo {
 }
 
 #topbar .menu a {
+    font-family: "Special Gothic Expanded One", sans-serif;
     margin: 10px;
     border-bottom: 2px solid transparent;
     /* 保留hover空間，以防尺寸變動*/
@@ -256,10 +230,32 @@ div.logo {
 
 /* 聯絡我們 */
 #contact {
+    display: flex;
+    flex-direction: column;  /* 主軸：垂直*/
+    justify-content: center; /* 主軸（垂直）對齊：置中*/
+    align-items: center;     /* 副軸（水平）對齊：置中*/
     height: 100vh;
     /* 背景影像預設排序高於背景顏色，會蓋過背景顏色ㄛ */
     /* background-image: url(../images/banner_1.jpg); */
     background-color: var(--bg-1);
+}
+#contact .content{
+    display: flex;
+    width: 80%;
+}
+#contact .content > * {
+    flex: 1; /* 父元素必須設定flex，其下面子元素才可這樣設定均分 */
+    margin: 0 15px;
+    /*background-color: #ccc;  先隨便選一顏色讓開發者能看到區域，用完記得刪掉 */
+}
+#contact .content h1{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+#contact .content address{
+    font-size: .8rem;
+    font-style: normal; /* address標籤內的字預設是斜體（italic）不要的話就改回normal */
+    margin: 20px o;
 }
 
 /* 頁尾區 */

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <marquee width="300" style="background-color: yellow;" 
+    onmouseover="stop();" onmouseout="start();">
+    跑馬燈文字
+    </marquee> -->
+
+    <!-- 事件處理方法 -->
+
+    <!-- 標籤綁定 -->
+    <button type="button" onclick="alert('Hi')">顯示訊息1</button>
+    <button type="button" onclick="sayHi('Hiiiii')">顯示訊息2</button>
+
+    <script>
+        function sayHi(str) {
+            alert(str);
+        }
+    </script>
+
+    <!-- 監聽事件 -->
+    <button type="button" id="btn1">顯示訊息3</button>
+    <script>
+        // 取得HTML標籤的方法們
+        // 使用getElementById
+        // let btn1 = document.getElementById("btn1");
+        // 使用querySelector + css符號
+        let btn1 = document.querySelector("#btn1");
+        // 使用匿名函式
+        // btn1.addEventListener('click', function () {
+        //     alert("Hi3");
+        // });
+        // 使用箭頭函式
+        btn1.addEventListener('click', () => {
+            alert("Hi3");
+        });
+    </script>
+</body>
+
+</html>
