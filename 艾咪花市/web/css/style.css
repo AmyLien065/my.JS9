@@ -258,6 +258,27 @@ div.logo {
     margin: 20px o;
 }
 
+/* 聯絡表單 */
+#contactform > * {
+    display: block;
+    width: 100%;
+}
+#contactform label{
+    margin: 30px 0 10px;
+}
+#contactform input,
+#contactform textarea{
+    border: 1px solid var(--lesser-3);
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--lesser-4);
+}
+
+#contactform input:focus,
+#contactform textarea:focus{
+    outline: 2px solid var(--lesser-3);
+}
+
 /* 頁尾區 */
 footer {
     display: flex;

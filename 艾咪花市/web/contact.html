@@ -62,12 +62,22 @@
                     </address>
 
                     <!-- google map -->
-                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.7546295681077!2d121.5254698!3d25.0423998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a970a11a84ad%3A0x58e05f2528812097!2z5ZyL56uL6Ie65YyX5ZWG5qWt5aSn5a24!5e0!3m2!1szh-TW!2stw!4v1753778275399!5m2!1szh-TW!2stw" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.7546295681077!2d121.5254698!3d25.0423998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a970a11a84ad%3A0x58e05f2528812097!2z5ZyL56uL6Ie65YyX5ZWG5qWt5aSn5a24!5e0!3m2!1szh-TW!2stw!4v1753778275399!5m2!1szh-TW!2stw"
+                        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
 
                 </div>
 
                 <!-- 表單 -->
-                <form action="">表單內容</form>
+                <form action="" method="post" accept-charset="UTF-8"></form>
+                <label for="username">*姓名：</label>
+                <input type="text" name="username" id="username" title="姓名欄位" placeholder="請輸入您的姓名" required autofocus>
+                <label for="tel">聯絡電話：</label>
+                <input type="tel" name="tel" id="tel" maxlength="10" title="電話號碼欄位" placeholder="例如：0987654321">
+                <label for="email">Email：</label>
+                <!-- multiple 可輸入多個值用「,」隔開 -->
+                <input type="email" name="email" id="email" required multiple title="Email欄位" placeholder="請輸入Emal">
 
             </div>
 
