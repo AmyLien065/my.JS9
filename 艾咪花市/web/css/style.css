@@ -27,7 +27,7 @@
     --alpha-w-40: rgba(255, 255, 255, 0.4);
 
     /* 尺寸 */
-    --ex: 99999px;
+    --ex: 99999;
 }
 
 /* CSS reset */
@@ -116,9 +116,10 @@ a {
     transition: .4s .01s;
     /* 第一個數字是動畫時間 第二個數字是delay時間 */
 }
-/* 共用區 */
+/* -----------共用區------------- */
 /* 區塊標題 */
 .title{
+    margin-top: 100px;
     margin-bottom: 30px;
 }
 .title * { /* .title區中的所有子孫 */
@@ -136,9 +137,25 @@ a {
     font-weight: 700;
     font-size: 1.5rem;
 }
+/* 按鈕區 */
+.btnAnimate{
+  /* position: relative; */
+  outline: none;
+  /* text-decoration: none; */
+  border-radius: 99px;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  /* text-transform: uppercase;*/
+  height: 60px;
+  width: 210px!important;
+  /* opacity: 1;
+  background-color: #ffffff;
+  border: 1px solid rgba(22, 76, 167, 0.6); */
+}
 
-
-/* 首頁區 */
+/* ---------------首頁區---------- */
 #topbar {
     position: fixed;
     /* position權重大於display */
@@ -230,6 +247,8 @@ div.logo {
 
 /* 聯絡我們 */
 #contact {
+    position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: column;  /* 主軸：垂直*/
     justify-content: center; /* 主軸（垂直）對齊：置中*/
@@ -257,6 +276,21 @@ div.logo {
     font-style: normal; /* address標籤內的字預設是斜體（italic）不要的話就改回normal */
     margin: 20px o;
 }
+/* 裝飾花朵 */
+#contact figure{
+    position: absolute;
+    width: 250px;
+}
+#contact .flower_1{
+    left: 0;
+    bottom: -30px;
+}
+#contact .flower_2{
+    right: -30px;
+    top: 110px;
+
+    transform: rotate(-50deg);
+}
 
 /* 聯絡表單 */
 #contactform > * {
@@ -264,7 +298,7 @@ div.logo {
     width: 100%;
 }
 #contactform label{
-    margin: 30px 0 10px;
+    margin: 30px 0 5px;
 }
 #contactform input,
 #contactform textarea{
@@ -272,12 +306,17 @@ div.logo {
     padding: 10px;
     border-radius: 5px;
     color: var(--lesser-4);
+    font-weight: 600;
 }
 
 #contactform input:focus,
 #contactform textarea:focus{
     outline: 2px solid var(--lesser-3);
 }
+#contactform input::placeholder{
+
+}
+
 
 /* 頁尾區 */
 footer {
