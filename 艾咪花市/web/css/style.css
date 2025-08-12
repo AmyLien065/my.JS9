@@ -111,6 +111,7 @@ a {
     transition: .4s .01s;
     /* 第一個數字是動畫時間 第二個數字是delay時間 */
 }
+
 /* -----------共用區------------- */
 /* 區塊標題 */
 .title{
@@ -124,12 +125,13 @@ a {
 .title h2{
     font-family: "atwriter";
     font-size: 2rem;
+    font-weight: 700;
     border-bottom: solid 2px var(--deep);
 }
 
 .title h3{
     font-family: "LXGW WenKai TC", cursive;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 1.5rem;
 }
 /* 按鈕區 */
@@ -138,28 +140,79 @@ a {
   outline: none;
   /* text-decoration: none; */
   border-radius: 99px;
-  display: flex!important; 
+  display: flex !important; 
   justify-content: center;
   align-items: center;
-  cursor: pointer;
   /* text-transform: uppercase;*/
   height: 60px;
-  width: 210px!important;
-  /* opacity: 1;
+  width: 210px !important;
+  /* opacity: 1; */
+  cursor: pointer;
+  margin: 20px auto;
+
+  /* 重置button預設值 */
   background-color: #ffffff;
-  border: 1px solid rgba(22, 76, 167, 0.6); */
+  border: 1px solid var(--lesser-3); 
+
+  /* 字句置中 */
+  letter-spacing: 25px;
+  padding-left: 25px;
+  /* 在前面補一個相同字距的空間，為了讓視覺置中 */
+}
+
+.btnAnimate:hover{
+    animation: myrotate 1s both;
+}
+
+@keyframes myrotate{
+    0% {
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(3deg);
+    }
+    50%{
+        transform: rotate(-3deg);
+    }
+    75%{
+        transform: rotate(1deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+.btnAnimate:hover span{
+    animation: myrotate 1s both;
+}
+
+@keyframes storm{
+    0% {
+        transform: translated(0, 0, 0);
+    }
+    25%{
+        transform: translated(4px, 0, 0);
+    }
+    50%{
+        transform: translated(-3px, 0, 0);
+    }
+    75%{
+        transform: translated(2px, 0, 0);
+    }
+    100%{
+        transform: translated(0, 0, 0);
+    }
 }
 
 /* ---------------首頁區---------- */
 #topbar {
     position: fixed;
     /* position權重大於display */
-    
     top: 0;
     left: 0;
     width: 100%;
+    /* position預設寬高為hug，所以需要手動寫width */
     z-index: var(--ex);
-    /* position預設寬高為hug，所以需要手動寫w */
     display: flex;
     justify-content: space-between;
     padding: 10px 30px;
@@ -212,11 +265,14 @@ div.logo {
     padding: 0 10px;
     border-radius: 999px;
     /* 玻璃擬態 */
+    /* 漸層色要用背景影像屬性 */
+    /* background-image: linear-gradient(to bottom right, rgba(255,255,255,0.4),rgba(255,255,255,0.7)); */
     background-color: var(--alpha-w-20);
     border: 2px solid var(--alpha-w-40);
     backdrop-filter: blur(30px);
 
     /* 容器陰影:只針對元素本身，子元素不會套用 */
+    /* 內外陰影若要寫一起加逗號，內陰影是inset，外陰影是預設不需額外寫offset */
     box-shadow: 2px 2px 5px var(--alpha-w-20),
         inset -1px -1px 1px var(--alpha-w-40);
 
@@ -335,8 +391,11 @@ div.logo {
 #contactform textarea:focus{
     outline: 2px solid var(--lesser-3);
 }
-#contactform input::placeholder{
-
+#contactform input::placeholder,
+#contactform textarea::placeholder{
+    color: var(--lesser-3);
+    font-size: 0.8rem;
+    font-weight: 400;
 }
 
 
