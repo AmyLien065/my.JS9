@@ -1,0 +1,103 @@
+@use "reset"; //use不允許其他規則寫在它之上！use必須在上面！
+@use "keyframes";
+@use "variables" as *;
+@use "function" as *;
+@import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&family=Special+Gothic+Expanded+One&display=swap');
+
+@font-face {
+    font-family: "atwriter";
+    src: url(../webfonts/atwriter.ttf);
+}
+
+/* -----------共用區------------- */
+// 區塊標題 
+.title {
+    margin: $space-ex 0 $space-xl;
+
+    * {
+        // .title區中的所有子孫
+        text-align: center;
+    }
+
+    h2 {
+        font-family: $family-en;
+        font-size: $f-s-xxxl;
+        @include border-b (1px, $Charcoal);
+        font-weight: $f-w-b;
+    }
+
+    h3 {
+        font-family: $family-tc;
+        font-size: $f-s-lg;
+    }
+
+    /* 按鈕區 */
+    .btnAnimate {
+        border-radius: $radius-ex;
+    }
+}
+
+.logo {
+    width: 55px;
+}
+
+.icon {
+    a {
+        width: 35px;
+        height: 35px;
+        margin: $space-xxs;
+    }
+}
+
+//此處迴圈不需調用，直接編譯語法即可（不可寫入function）
+@each $social in fb, ig, line {
+    .icon-#{$social} {
+        background-image: url(../images/icon-#{$social}.svg);
+
+        &:hover {
+            background-image: url(../images/icon-#{$social}-hover.svg);
+        }
+    }
+}
+
+/* ---------------首頁區---------- */
+#topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: $w-100;
+    z-index: $z-ex;
+    @extend %flex-between;
+    padding: $space-xs $space-xl;
+
+    ul {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .menu {
+        padding: $space-x-xs;
+        border-radius: $radius-ex ;
+        @include glassmorphism;
+        
+        a {
+            font-family: $family-en;
+            font-weight: $f-w-b;
+            margin: $space-xs;
+            @include border-b($width: 2px, $color: transparent);
+
+            &:hover {
+                color: $Black;
+                @include border-b($width: 2px, $color: $Black);
+
+            }
+        }
+    }
+}
+
+
+#contactform {
+    .btn-animat {
+        @extend %btn-animat;
+    }
+}
