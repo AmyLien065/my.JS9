@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="愛咪花室2.0" content="">
+    <title>愛咪花室2.0</title>
+    <!-- favicon一定得是「正方形」！！尺寸16*16 -->
+    <link rel="icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./css/style.min.css">
+
+</head>
+
+<body>
+    <!-- 首頁區 -->
+    <!-- id & class 的名稱，都是自己命名的 -->
+    <header id="topbar">
+        <!-- logo區 -->
+        <div class="logo">
+            <img src="./images/logo_b.svg" alt="logo">
+        </div>
+        <!-- 導覽列 -->
+        <nav class="navigation">
+            <!-- icon選單 咒語：ul>li*3>a -->
+            <ul class="icon">
+                <li><a class="icon-fb" href="#"></a></li>
+                <li><a class="icon-ig" href="#"></a></li>
+                <li><a class="icon-line" href="#"></a></li>
+            </ul>
+
+            <!-- 主選單 咒語：ul>li*6>a -->
+            <ul class="menu"> <!-- shift+option+a 只註解後面：） ul>li*6>a 指令就會自己輸入6次，相當方便省時 -->
+                <li><a href="./index.html">HOME</a></li>
+                <li><a href="#">NEWS</a></li> <!-- 若超連結暫時不確定導去哪，則先輸入#以免忘記 -->
+                <li><a href="#">SERVICE</a></li>
+                <li><a href="#">VIDEO</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="./contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- 咒語長這樣：main>section*5 -->
+    <main id="index">
+        <section id="banner"></section>
+        <section id="news">
+            <!-- 區塊標題 -->
+            <header class="title">
+                <h2>NEWS</h2>
+                <h3>最新消息</h3>
+            </header>
+            <!-- 列表區塊 -->
+            <div class="list-box">
+                <!-- 直接把整區標籤都長出來，咒語：article.item*3>a>figure+div.text-box>h2+p -->
+                <article class="item">
+                    <a href="#">
+                        <figure><img src="./images/pt_news1.jpg" alt=""></figure>
+                        <div class="text-box">
+                            <h2>NEWS TITLE1</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro modi voluptatibus sit
+                                atque distinctio rem perspiciatis voluptas quis dolor?Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, ad eligendi labore illum quas non voluptate modi dolorum voluptatem velit maxime dicta ipsum nulla quod unde debitis sapiente repellat aut? Ipsa non ullam illum numquam.
+                                </p>
+                        </div>
+                    </a>
+                </article>
+                <article class="item">
+                    <a href="#">
+                        <figure><img src="./images/pt_news2.jpg" alt=""></figure>
+                        <div class="text-box">
+                            <h2>NEWS TITLE2</h2>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo et, aliquam nisi ducimus
+                                voluptates dolor optio quaerat, cumque, sint tempore quibusdam exercitationem recusandae
+                                obcaecati. Placeat, quis saepe! Fuga, corrupti accusantium.</p>
+                        </div>
+                    </a>
+                </article>
+                <article class="item">
+                    <a href="#">
+                        <figure><img src="./images/pt_news3.jpg" alt=""></figure>
+                        <div class="text-box">
+                            <h2>NEWS TITLE3</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, exercitationem provident aperiam et, consequatur eos consectetur praesentium necessitatibus numquam, hic voluptates eius voluptas similique eum corporis ratione vero delectus quaerat?</p>
+                        </div>
+                    </a>
+                </article>
+            </div>
+            <a class="more" href="#">More</a>
+        </section>
+        <section id="service">
+            <!-- 區塊標題 -->
+            <header class="title">
+                <h2>SERVICE</h2>
+                <h3>服務項目</h3>
+            </header>
+            <!-- Emmet縮寫：(小括號)定義階層、[中括號]設定屬性＆值、{大括號}設定內容 -->
+            <!-- 咒語：ul.list-box>li.item*4>a[href="#"]>h2{SERVICE TITLE}+p -->
+             <ul class="list-box">
+                <li class="item">
+                    <a href="#">
+                        <h2>SERVICE TITLE</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur nulla obcaecati sint repudiandae temporibus sequi quas commodi esse, iusto autem quasi, aspernatur, sit atque voluptatem ullam corrupti fuga animi ad?</p>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#">
+                        <h2>SERVICE TITLE</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur nulla obcaecati sint repudiandae temporibus sequi quas commodi esse, iusto autem quasi, aspernatur, sit atque voluptatem ullam corrupti fuga animi ad?</p>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#">
+                        <h2>SERVICE TITLE</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur nulla obcaecati sint repudiandae temporibus sequi quas commodi esse, iusto autem quasi, aspernatur, sit atque voluptatem ullam corrupti fuga animi ad?</p>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#">
+                        <h2>SERVICE TITLE</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur nulla obcaecati sint repudiandae temporibus sequi quas commodi esse, iusto autem quasi, aspernatur, sit atque voluptatem ullam corrupti fuga animi ad?</p>
+                    </a>
+                </li>
+             </ul>
+        </section>
+        <section id="video">
+            <!-- 區塊標題 -->
+            <header class="title">
+                <h2>VIDEO</h2>
+                <h3>相關影片</h3>
+            </header>
+        </section>
+        <section id="about">
+            <!-- 區塊標題 -->
+            <header class="title">
+                <h2>ABOUT</h2>
+                <h3>關於我們</h3>
+            </header>
+        </section>
+    </main>
+
+    <!-- 頁尾區 -->
+    <footer>
+        <h2>愛咪花室<span>Amy Flower</span></h2>
+        <nav>
+            <ul class="sitemap">
+                <li><a href="./index.html">HOME</a></li>
+                <li>
+                    <a href="#">NEWS</a>
+                    <!-- 子選單 -->
+                    <ul>
+                        <li><a href="#">優惠活動</a></li>
+                        <li><a href="#">媒體報導</a></li>
+                        <li><a href="#">商店公告</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">SERVICE</a>
+                    <!-- 子選單 -->
+                    <ul>
+                        <li><a href="#">服務項目1</a></li>
+                        <li><a href="#">服務項目2</a></li>
+                        <li><a href="#">服務項目3</a></li>
+                        <li><a href="#">服務項目4</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">VIDEO</a></li>
+                <li><a href="./contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        <small>Copyright &copy; 愛咪花室 Amy Flower.</small>
+    </footer>
+
+</body>
+
+</html>

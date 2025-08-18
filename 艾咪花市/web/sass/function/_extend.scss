@@ -18,16 +18,28 @@
     display: flex;
     justify-content: flex-end;
 }
+%mutiple-lines{ //多行省略寫法
+    overflow: hidden; //文字超過就隱藏
+    text-overflow: ellipsis; 
+    display: -webkit-box;
+    -webkit-box-orient: vertical; //垂直
+}
 
-%btn-animat {
+%img-cover{
+    object-fit: cover;
+    height: 100%;
+    // width: 100%; 在css reset已經設定過，故不需重複做
+}
+
+%btnAnimate {
     border-radius: $radius-ex;
     @extend %flex-center;
     height: 60px;
-    width: 210px !important;
+    width: 210px;
     cursor: pointer;
     margin: $space-md auto;
     @include bordered;
-    color: $lesser-4;
+    color: $lesser-3;
     letter-spacing: $space-sm;
     padding-left: $space-sm;
 
@@ -37,5 +49,25 @@
         span {
             @include amt($name: mystorm);
         }
+    }
+}
+
+%
+
+%input-style {
+    //border:1px solid var(--lesser-3);
+    padding: $space-xxs;
+    border-radius: $space-xxs;
+    color: $lesser-4;
+    font-weight: 600;
+
+    &:foucs {
+        outline: 2px solid $lesser-3;
+    }
+
+    &::placeholder {
+        color: $lesser-3;
+        font-size: $f-s-xs;
+        font-weight: $f-w-r;
     }
 }
