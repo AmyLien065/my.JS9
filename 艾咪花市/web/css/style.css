@@ -126,17 +126,17 @@ a {
   justify-content: flex-end;
 }
 
+#news figure img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+}
+
 .list-box .text-box p {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-}
-
-#news figure img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 100%;
 }
 
 #contact .content #contactform .btnAnimate {

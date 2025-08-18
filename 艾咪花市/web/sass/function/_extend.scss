@@ -18,17 +18,18 @@
     display: flex;
     justify-content: flex-end;
 }
-%mutiple-lines{ //多行省略寫法
-    overflow: hidden; //文字超過就隱藏
-    text-overflow: ellipsis; 
-    display: -webkit-box;
-    -webkit-box-orient: vertical; //垂直
-}
 
 %img-cover{
     object-fit: cover;
     height: 100%;
     // width: 100%; 在css reset已經設定過，故不需重複做
+}
+
+%mutiple-lines{ //多行省略寫法
+    overflow: hidden; //文字超過就隱藏
+    text-overflow: ellipsis; 
+    display: -webkit-box;
+    -webkit-box-orient: vertical; //垂直
 }
 
 %btnAnimate {
@@ -51,8 +52,6 @@
         }
     }
 }
-
-%
 
 %input-style {
     //border:1px solid var(--lesser-3);
