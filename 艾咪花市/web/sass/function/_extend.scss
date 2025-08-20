@@ -19,17 +19,10 @@
     justify-content: flex-end;
 }
 
-%img-cover{
+%object-cover {
     object-fit: cover;
     height: 100%;
-    // width: 100%; 在css reset已經設定過，故不需重複做
-}
-
-%mutiple-lines{ //多行省略寫法
-    overflow: hidden; //文字超過就隱藏
-    text-overflow: ellipsis; 
-    display: -webkit-box;
-    -webkit-box-orient: vertical; //垂直
+    width: 100%; //在<img>reset已經設定過，本不需重複做，但為了讓其他人共用再寫一次
 }
 
 %btnAnimate {
@@ -69,4 +62,25 @@
         font-size: $f-s-xs;
         font-weight: $f-w-r;
     }
+}
+
+%mutiple-lines {
+    //多行省略寫法
+    overflow: hidden; //文字超過就隱藏
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical; //垂直
+}
+
+%single-line {
+    //單行省略寫法
+    overflow: hidden;
+    text-overflow: ellipsis; //省略號
+    white-space: nowrap; //單行省略的語法和多行省略不同！
+}
+
+%list-title {
+    font-size: $f-s-lg;
+    font-weight: $f-w-m;
+    margin-bottom: $space-xs;
 }

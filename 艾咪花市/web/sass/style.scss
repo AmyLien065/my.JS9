@@ -138,10 +138,16 @@
         @extend %flex-center;
         flex-direction: column;
         height: 100vh;
+
+        @media($mediaMd) {
+            &#video {
+                height: auto;
+                padding-bottom: $space-ex;
+            }
+        }
     }
 }
 
-/* 最新消息的共用區 */
 .list-box {
     display: flex;
     gap: $space-xl;
@@ -156,66 +162,194 @@
         border-radius: $radius-md;
         overflow: hidden; //超過指定的框（在此處為超過圓角的圖片範圍）會被隱藏
     }
-
-    .text-box {
-        padding: $space-md;
-
-        h2 {
-            font-size: $f-s-lg;
-            font-weight: $f-w-m;
-            margin-bottom: $space-xs;
-        }
-
-        p {
-            text-align: justify; //中文文案建議齊行，英文文案不建議使用
-            @extend %mutiple-lines;
-            -webkit-line-clamp: 4;
-        }
-    }
 }
 
 /* 最新消息 */
 #news {
     background-color: $bg-1;
 
-    figure {
-        height: 30vh;
+    article {
+        @media($mediaMd) {
 
-        img {
-            @extend %img-cover;
+            //平板尺寸以下包含手機版
+            &:last-child {
+                display: none;
+            }
+        }
+
+        @media($mediaSm) {
+            &:nth-child(2) {
+                //第二個孩子以後的所有子元素
+                display: none;
+            }
+        }
+
+        a {
+            &:hover {
+                .text-box {
+                    background-color: $Light;
+                }
+
+                figure {
+                    filter: brightness(70%);
+                    // filter: saturate(20%);
+                }
+            }
+
+            figure {
+                height: 300vh;
+                transition: $speed-fast;
+
+                img {
+                    @extend %object-cover;
+                }
+            }
+
+            .text-box {
+                padding: $space-md;
+                transition: $speed-fast; //需設定在元素本人身上
+
+                h2 {
+                    @extend %list-title;
+                }
+
+                p {
+                    text-align: justify; //中文文案建議齊行，英文文案不建議使用
+                    @extend %mutiple-lines;
+                    -webkit-line-clamp: 4;
+                }
+            }
         }
     }
 }
+
+
 
 /* 服務項目 */
-#service{
-    .item{
-        height: 50vh;
+#service {
+    background-color: $bg-2;
 
-        background-size: cover;
-        background-position: center; 
-        //背景圖片預設抓取左上角並剪裁調右下圖片範圍
-        //要背景置中要另外寫background-position:
-        //原本正確應該是background-position: center center;
-        //但預設y軸本來就是center顧可以省略
+    .list-box {
+        @media($mediaMd) {
+            flex-direction: column;
+            height: 60vh; //主軸垂直時，高度轉換為hug，影響到子元素展不開
+        }
 
-        &:nth-child(1){
-            background-image: url(../images/pt_svc1.jpg);
-        }
-        &:nth-child(2){
-            background-image: url(../images/pt_svc2.jpg);
-        }
-        &:nth-child(3){
-            background-image: url(../images/pt_svc3.jpg);
-        }
-        &:nth-child(4){
-            background-image: url(../images/pt_svc4.jpg);
+
+        .item {
+            display: flex;
+            align-items: flex-end;
+            height: 50vh;
+            background-size: cover;
+            background-position: center;
+            //背景圖片預設抓取左上角並剪裁調右下圖片範圍
+            //要背景置中要另外寫background-position:
+            //原本正確應該是background-position: center center;
+            //但預設y軸本來就是center顧可以省略
+
+            @media ($mediaMd) {
+                &:nth-child(n+3) {
+                    //第三個（含三）以後作用
+                    display: none;
+                }
+            }
+
+            @media ($mediaSm) {
+                &:nth-child(n+2) {
+                    //第2個（含2）以後作用
+                    display: none;
+                }
+            }
+
+            &:nth-child(1) {
+                background-image: url(../images/pt_svc1.jpg);
+            }
+
+            &:nth-child(2) {
+                background-image: url(../images/pt_svc2.jpg);
+            }
+
+            &:nth-child(3) {
+                background-image: url(../images/pt_svc3.jpg);
+            }
+
+            &:nth-child(4) {
+                background-image: url(../images/pt_svc4.jpg);
+            }
+
+            a {
+                width: 100%; //因為.items現在flex會讓a變成hug狀態（等於沒超過邊界），需手動限制寬度
+                padding: $space-md;
+                color: $Light;
+                background-color: $alpha-b-60;
+
+                h2 {
+                    @extend %list-title;
+                }
+
+                p {
+                    // overflow: hidden;
+                    // text-overflow: ellipsis; //省略號
+                    // white-space: nowrap; //單行省略的語法和多行省略不同！
+                    @extend %single-line;
+                }
+
+                &:hover {
+                    color: $Black;
+                    background-color: $alpha-w-40;
+                }
+            }
         }
     }
-
 }
 
+/* 相關影片 */
+#video {
+    background-image: url(../images/bg_contact.jpg);
+    background-size: cover; //自動剪裁超出的範圍，但不會置中剪裁，預設才切掉右下的東東
+    background-position: center; //和background-size: cover;通常是搭配一組，置中剪裁比較好看
+    background-attachment: fixed; //固定背景的語法，可以做簡單的視差
 
+    @media($mediaMd) {
+        height: auto !important;
+    }
+
+    div {
+        @extend %flex-center;
+        // width: 70%;//若設定width會有等比例縮放超出視窗的風險，所以改設定height
+        height: 50vh;
+
+        @media($mediaMd) {
+            width: 80%;
+            height: auto;
+            //因為上下設定的單位不同（上面設定height、下面設定width）
+            //所以要加一個height: auto;才會成功變化
+        }
+
+        video {
+            height: 100%;
+
+            @media($mediaMd) {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+
+/* 關於我們 */
+#about {
+    position: relative;
+
+    video {
+        position: absolute;
+        @extend %object-cover;
+        mix-blend-mode: overlay;
+        filter: brightness(150%);
+        // opacity: .3; 透明度
+        //可以玩玩看混合模式、濾鏡等等
+    }
+}
 
 /* 聯絡我們 */
 #contact {
