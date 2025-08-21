@@ -21,35 +21,38 @@
 
     h2 {
         position: relative;
-        font-family: $family-en;
+        font-family: $family-dispaly;
         font-size: $f-s-xxxl;
-        @include border-b (1px, $Charcoal);
+        @include border-b;
         font-weight: $f-w-b;
 
-
-        &::before {
+        &::before,
+        &::after {
             content: ""; //content是必填！即使無值也必填！
             position: absolute;
-            top: -5px;
+            border-radius: $radius-ex;
+            background-color: $lesser-4;
+        }
+
+        &::before{
+            top: -3px;
             left: -10px;
             //left: calc(50% - 15px); 如果要剛好物件中間的話要這樣寫
             //calc讓不同單位的東西可以加減乘除
             //運算符號前後需要空格！
             width: 15px;
             height: 15px;
-            border-radius: $radius-ex;
-            background-color: $lesser-4;
+
         }
 
         &::after {
-            content: ""; //content是必填！即使無值也必填！
-            position: absolute;
-            bottom: 5px;
-            right: -5px;
+            bottom: 10px;
+            right: -7px;
+
             width: 10px;
             height: 10px;
-            border-radius: $radius-ex;
-            background-color: $lesser-4;
+            // border-radius: $radius-ex;
+            // background-color: $lesser-4;
         }
     }
 
@@ -58,10 +61,10 @@
         font-size: $f-s-lg;
     }
 
-    /* 按鈕區 */
-    .btnAnimate {
-        border-radius: $radius-ex;
-    }
+    // /* 按鈕區 */ 好像寫錯地方了
+    // .btnAnimate {
+    //     border-radius: $radius-ex;
+    // }
 }
 
 .logo {
@@ -151,6 +154,7 @@
 .list-box {
     display: flex;
     gap: $space-xl;
+    width: $w-80;
     max-width: 1100px;
     //最大寬度，只要超過這個數值，文字就不會再變形了
     //提升閱讀注意力，將注意力集中在中間
@@ -197,7 +201,7 @@
             }
 
             figure {
-                height: 300vh;
+                height: 30vh;
                 transition: $speed-fast;
 
                 img {
@@ -310,9 +314,9 @@
     background-position: center; //和background-size: cover;通常是搭配一組，置中剪裁比較好看
     background-attachment: fixed; //固定背景的語法，可以做簡單的視差
 
-    @media($mediaMd) {
-        height: auto !important;
-    }
+    // @media($mediaMd) {
+    //     height: auto !important;
+    // }
 
     div {
         @extend %flex-center;
@@ -340,12 +344,13 @@
 /* 關於我們 */
 #about {
     position: relative;
+    background-color: $lesser-1;
 
     video {
         position: absolute;
         @extend %object-cover;
         mix-blend-mode: overlay;
-        filter: brightness(150%);
+        filter: brightness(70%) contrast(120%);
         // opacity: .3; 透明度
         //可以玩玩看混合模式、濾鏡等等
     }
@@ -359,6 +364,10 @@
     flex-direction: column;
     height: 100vh;
     background-color: $bg-1;
+
+    @media ($mediaMd) {
+        height: auto;
+    }
 
     .content {
         display: flex;
@@ -375,7 +384,7 @@
 
         h1 {
             font-size: $f-s-xl;
-            font-weight: $f-w-b; //600
+            font-weight: $f-w-m; //600
         }
 
         address {

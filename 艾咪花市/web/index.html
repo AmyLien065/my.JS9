@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="愛咪花室2.0" content="">
     <title>愛咪花室2.0</title>
-    <!-- favicon一定得是「正方形」！！尺寸16*16 -->
+    <!-- favicon一定得是「正方形」！！尺寸16*16(一般會做三倍48*48) -->
     <link rel="icon" href="./favicon.ico">
     <link rel="stylesheet" href="./css/style.min.css">
 
@@ -42,7 +42,7 @@
     </header>
     <!-- 咒語長這樣：main>section*5 -->
     <main id="index">
-        <section id="banner"></section>
+        <section id="banner">BANNER</section>
         <section id="news">
             <!-- 區塊標題 -->
             <header class="title">
@@ -120,6 +120,9 @@
                     </a>
                 </li>
              </ul>
+
+             <a class="more" href="#">More</a>
+
         </section>
         <section id="video">
             <!-- 區塊標題 -->
@@ -128,7 +131,7 @@
                 <h3>相關影片</h3>
             </header>
             <div>
-                <video src="./images//Planter.mp4" poster="./images/cover.jpg" muted loop></video>
+                <video src="./images/Planter.mp4" poster="./images/cover.jpg" controls preload="metadata"></video>
             </div>
         </section>
         <section id="about">
@@ -137,6 +140,8 @@
                 <h2>ABOUT</h2>
                 <h3>關於我們</h3>
             </header>
+            <!-- 背景影片 -->
+             <video src="./images/flower.mp4" autoplay muted loop playsinline></video>
         </section>
     </main>
 
