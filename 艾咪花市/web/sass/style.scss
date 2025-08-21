@@ -21,7 +21,7 @@
 
     h2 {
         position: relative;
-        font-family: $family-dispaly;
+        font-family: $family-en;
         font-size: $f-s-xxxl;
         @include border-b;
         font-weight: $f-w-b;
@@ -346,8 +346,78 @@
     position: relative;
     background-color: $lesser-1;
 
-    video {
+    div{
         position: absolute;
+        z-index: 1;
+        width: 60%;
+        height: 100%;
+        background-color: $alpha-w-70;
+
+        @extend %flex-center;
+        flex-direction: column;
+
+        @media ($mediaMd) {
+            width: 90%;
+        }
+
+        p{
+            overflow: scroll;
+            width: 90%;
+            margin-bottom: $space-xxl;
+            padding-right: $space-xs;
+
+            &::-webkit-scrollbar{//整條主要滾動條(包含按鈕範圍)
+                //詳細可以去w3school瞧瞧，網址：https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp
+                background-color: $lesser-1;
+                width: 12px; //控制垂直捲軸
+                height: 12px; //控制水平捲軸
+            }
+            &::-webkit-scrollbar-button{//捲軸的上下左右箭頭
+                // display: block; //mac系統原本預設display:none
+                // background-color: $lesser-3;
+                // width: 12px;
+                // height: 12px;
+                background-size: contain;//等比例縮放，完整顯示不剪裁
+                background-position: center;
+                background-repeat: no-repeat;
+
+                //mac不太配合XD沒有顯示箭頭
+                &:vertical:single-button:start{//控制垂直方向的按鈕-上
+                    background-image: url(../images/arrow-up.svg);
+                }
+
+                &:vertical:single-button:end{//控制垂直方向的按鈕-下
+                    background-image: url(../images/arrow-down.svg);
+                }
+                &:horizontal:single-button:start{//控制水平方向的按鈕-左
+                    background-image: url(../images/arrow-left.svg);
+                }
+                &:horizontal:single-button:end{//控制水平方向的按鈕-右
+                    background-image: url(../images/arrow-right.svg);
+                }
+            }
+
+            &::-webkit-scrollbar-thumb{//捲軸的滾動手柄
+                background-color: $lesser-4;
+                border-radius: $radius-ex;
+            }
+            &::-webkit-scrollbar-track{//捲軸的軌道（較少使用）(不包含按鈕範圍)
+                background-color: orange; //會取代掉::-webkit-scrollbar設定的顏色
+                border-radius: $radius-ex;
+            }
+            &::-webkit-scrollbar-track-piece{//沒有被手柄遮住的軌道
+                // // background-color: red;
+                // border-radius: $radius-ex;
+            }
+            &::-webkit-scrollbar-corner{//滾動條的水平軸＆粽軸重疊的底角
+                background-color: $lesser-4;
+            }
+
+        }
+    }
+
+    video {
+        // position: absolute;
         @extend %object-cover;
         mix-blend-mode: overlay;
         filter: brightness(70%) contrast(120%);
@@ -419,6 +489,11 @@
 
             textarea {
                 @extend %input-style;
+                border-bottom-right-radius: 0;//只針對右下圓角去設定
+
+                &::-webkit-resizer{//改「聯絡我們表單-留言區」右下的預設折角
+                    background-image: url(../images/arrow-45.svg);
+                }
             }
         }
     }
